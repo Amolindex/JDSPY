@@ -178,7 +178,6 @@ async def memberBringJoinMember(ua, cookie):
         "invitePin": invitePin
     }
     url = f"https://api.m.jd.com/api?client=&clientVersion=&appid=jdchoujiang_h5&t={t}&functionId=memberBringJoinMember&body={json.dumps(body)}&code={authorCode}&invitePin={invitePin}"
-    print(url)
     headers = {
         'accept': '*/*',
         'accept-encoding': 'gzip, deflate, br',
