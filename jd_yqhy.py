@@ -279,7 +279,7 @@ async def main():
     success = 0  # 计算成功数
     global invitePin, activityUrl, MSG
     MSG = ''
-    title = "🗣消息提醒：邀好友赢大礼"
+    title = "邀好友赢大礼"
     r = re.compile(r"pt_pin=(.*?);")
     invitePin = r.findall(cks[0])[0] # 获取COOKIES中第一个车头pin
     activityUrl = f'https://prodev.m.jd.com/mall/active/{activityId}/index.html?code={authorCode}&invitePin={invitePin}'  # 活动链接
