@@ -13,7 +13,7 @@ ActivityEntry：https://shop.m.jd.com/shop/lottery?shopId=xxxxx&venderId=xxxxx
 Description: 变量：export DPCJID="shopId1&shopId2" #变量为店铺🆔
 """
 
-import requests, time, re, os, sys, json
+import requests, time, re, os, sys, json, random
 from datetime import datetime
 from sendNotify import *
 from urllib.parse import quote_plus, unquote_plus
