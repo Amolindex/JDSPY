@@ -21,6 +21,30 @@ import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 from functools import partial
 print = partial(print, flush=True)
+
+def userAgent():
+    global uuid, addressid, iosVer, iosV, clientVersion, iPhone, area, ADID, lng, lat
+    uuid = ''.join(random.sample(
+        ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
+         'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'z'], 40))
+    addressid = ''.join(random.sample('1234567898647', 10))
+    iosVer = ''.join(random.sample(["15.1.1", "14.5.1", "14.4", "14.3", "14.2", "14.1", "14.0.1"], 1))
+    iosV = iosVer.replace('.', '_')
+    clientVersion = ''.join(random.sample(["10.3.0", "10.2.7", "10.2.4"], 1))
+    iPhone = ''.join(random.sample(["8", "9", "10", "11", "12", "13"], 1))
+    area = ''.join(random.sample('0123456789', 2)) + '_' + ''.join(random.sample('0123456789', 4)) + '_' + ''.join(
+        random.sample('0123456789', 5)) + '_' + ''.join(random.sample('0123456789', 4))
+    ADID = ''.join(random.sample('0987654321ABCDEF', 8)) + '-' + ''.join(
+        random.sample('0987654321ABCDEF', 4)) + '-' + ''.join(random.sample('0987654321ABCDEF', 4)) + '-' + ''.join(
+        random.sample('0987654321ABCDEF', 4)) + '-' + ''.join(random.sample('0987654321ABCDEF', 12))
+    lng = '119.31991256596' + str(random.randint(100, 999))
+    lat = '26.1187118976' + str(random.randint(100, 999))
+    UserAgent = ''
+    if not UserAgent:
+        return f'jdapp;iPhone;10.0.4;{iosVer};{uuid};network/wifi;ADID/{ADID};model/iPhone{iPhone},1;addressid/{addressid};appBuild/167707;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS {iosV} like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/null;supportJDSHWK/1'
+    else:
+        return UserAgent
+
 def get_cookies():
     CookieJDs = []
     if os.environ.get("JD_COOKIE"):
